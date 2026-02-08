@@ -45,33 +45,40 @@ export const FloatingActionBar: React.FC = () => {
 
   return (
     <>
-      <div className="floating-action-bar">
-        {actions.map((action, index) => (
-          <button
-            key={action.id}
-            onClick={() => scrollToSection(action.id)}
-            className={`action-btn ${activeSection === action.id ? 'active' : ''}`}
-            data-label={action.label}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <span className="action-icon">{action.icon}</span>
-            <span className="action-label">{action.label}</span>
-          </button>
-        ))}
+      <div className="floating-action-bar-container">
+        <div className="floating-action-bar">
+          {actions.map((action, index) => (
+            <button
+              key={action.id}
+              onClick={() => scrollToSection(action.id)}
+              className={`action-btn ${activeSection === action.id ? 'active' : ''}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <span className="action-icon">{action.icon}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <style>{`
-        .floating-action-bar {
+        .floating-action-bar-container {
           position: fixed;
           right: 2rem;
           top: 50%;
           transform: translateY(-50%);
           z-index: 999;
+          background-color: var(--color-primary);
+          padding: 0.75rem;
+          border-radius: 40px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+          animation: slideInRight 0.6s ease-out;
+        }
+
+        .floating-action-bar {
           display: flex;
           flex-direction: column;
-          align-items: flex-end; /* Align to the right */
-          gap: 1rem;
-          animation: slideInRight 0.6s ease-out;
+          align-items: center;
+          gap: 0.5rem;
         }
 
         @keyframes slideInRight {
@@ -86,101 +93,60 @@ export const FloatingActionBar: React.FC = () => {
         }
 
         .action-btn {
-          width: 50px;
-          height: 50px;
-          border-radius: 25px; /* Circle */
-          background-color: var(--color-primary);
+          width: 44px;
+          height: 44px;
+          border-radius: 22px;
+          background-color: transparent;
           border: none;
           cursor: pointer;
           display: flex;
-          flex-direction: row-reverse; /* Icon on right, text expands to left */
           align-items: center;
           justify-content: center;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          box-shadow: 0 4px 12px rgba(253, 185, 19, 0.3);
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           position: relative;
-          padding: 0;
-          overflow: hidden;
-        }
-
-        .action-label {
-          max-width: 0;
-          opacity: 0;
-          white-space: nowrap;
-          font-weight: 600;
-          font-size: 0.875rem;
-          color: var(--color-text-dark);
-          transition: all 0.4s ease;
-          pointer-events: none;
           padding: 0;
         }
 
         .action-btn:hover {
-          width: 140px; /* Expand horizontally */
-          padding: 0 1.25rem;
-          justify-content: space-between;
-          box-shadow: 0 6px 20px rgba(253, 185, 19, 0.4);
-        }
-
-        .action-btn:hover .action-label {
-          max-width: 100px;
-          opacity: 1;
-          padding-left: 0.5rem;
-        }
-
-        .action-btn.active {
-          background-color: var(--color-secondary);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .action-btn.active .action-label {
-          color: white;
-        }
-
-        .action-btn.active .action-icon {
+          background-color: rgba(0, 0, 0, 0.1);
           transform: scale(1.1);
         }
 
-        .action-btn:active {
-          transform: scale(0.95);
+        .action-btn.active {
+          background-color: rgba(0, 0, 0, 0.2);
+          transform: scale(1.1);
         }
 
         .action-icon {
-          width: 50px; /* Keep icon area consistent */
-          height: 50px;
+          width: 44px;
+          height: 44px;
           flex-shrink: 0;
-          font-size: 1.25rem;
+          font-size: 1.1rem;
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 1;
-          transition: transform 0.3s ease;
+          color: #000000;
         }
 
         @media (max-width: 768px) {
-          .floating-action-bar {
-            right: 1rem;
-            gap: 0.75rem;
+          .floating-action-bar-container {
+            right: 1.5rem;
+            padding: 0.5rem;
           }
 
           .action-btn {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
           }
 
           .action-icon {
-            width: 45px;
-            height: 45px;
-            font-size: 1.1rem;
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
           }
-
-          .action-btn:hover {
-            width: 45px; /* Disable expansion on mobile for simplicity, or adjust */
-          }
-        }
-
         @media (max-width: 480px) {
-          .floating-action-bar {
+          .floating-action-bar-container {
             display: none;
           }
         }

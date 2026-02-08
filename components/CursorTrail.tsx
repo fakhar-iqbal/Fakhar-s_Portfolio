@@ -9,7 +9,7 @@ interface Point {
 export const CursorTrail: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const pointsRef = useRef<Point[]>([]);
-    const requestRef = useRef<number>();
+    const requestRef = useRef<number>(0);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -90,7 +90,7 @@ export const CursorTrail: React.FC = () => {
                 // Newer points (age 0) are opaque, older points are transparent
                 const opacity = 1 - (point.age / 25);
 
-                ctx.strokeStyle = `rgba(253, 185, 19, ${opacity})`;
+                ctx.strokeStyle = `rgba(255, 152, 0, ${opacity})`;
                 ctx.lineWidth = 3 * opacity; // Line also gets thinner
                 ctx.lineCap = 'round';
                 ctx.stroke();

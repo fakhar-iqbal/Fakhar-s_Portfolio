@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const DarkModeToggle: React.FC = () => {
-    const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
-    useEffect(() => {
-        // Check local storage for theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            setIsDark(true);
-            document.body.classList.add('dark-mode');
-        }
-    }, []);
+  useEffect(() => {
+    // Check local storage for theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDark(true);
+      document.body.classList.add('dark-mode');
+    }
+  }, []);
 
-    const toggleDarkMode = () => {
-        setIsDark(!isDark);
-        if (!isDark) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        }
-    };
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    if (!isDark) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
-    return (
-        <>
-            <button
-                className="dark-mode-toggle"
-                onClick={toggleDarkMode}
-                aria-label="Toggle dark mode"
-                title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-                <span className="toggle-icon">
-                    {isDark ? '☀️' : '🌙'}
-                </span>
-            </button>
+  return (
+    <>
+      <button
+        className="dark-mode-toggle"
+        onClick={toggleDarkMode}
+        aria-label="Toggle dark mode"
+        title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        <span className="toggle-icon">
+          {isDark ? '☀️' : '🌙'}
+        </span>
+      </button>
 
-            <style>{`
+      <style>{`
         .dark-mode-toggle {
           position: fixed;
           bottom: 2rem;
@@ -57,7 +57,7 @@ export const DarkModeToggle: React.FC = () => {
 
         .dark-mode-toggle:hover {
           transform: scale(1.1) rotate(15deg);
-          box-shadow: 0 6px 20px rgba(253, 185, 19, 0.4);
+          box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
         }
 
         .dark-mode-toggle:active {
@@ -91,6 +91,6 @@ export const DarkModeToggle: React.FC = () => {
           }
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 };

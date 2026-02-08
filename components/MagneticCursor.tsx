@@ -156,7 +156,7 @@ export const MagneticCursor: React.FC = () => {
 
         /* Hover State: Kite gets bigger */
         .kite-cursor.hovering {
-          filter: drop-shadow(0 0 15px rgba(253, 185, 19, 0.6));
+          filter: drop-shadow(0 0 15px rgba(255, 152, 0, 0.6));
           transform: scale(1.1);
         }
 
@@ -201,9 +201,8 @@ export const MagneticCursor: React.FC = () => {
                     ref={lineRef}
                     id="cursor-string"
                     fill="none"
-                    stroke="var(--color-primary)"
+                    stroke="#FF9800"
                     strokeWidth="2"
-                    opacity="0.5"
                     strokeDasharray="3 3"
                 />
             </svg>
@@ -215,8 +214,8 @@ export const MagneticCursor: React.FC = () => {
                 <svg viewBox="0 0 50 70" width="100%" height="100%" style={{ overflow: 'visible' }}>
                     <defs>
                         <linearGradient id="kiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#FDB913" />
-                            <stop offset="100%" stopColor="#FF8C00" />
+                            <stop offset="0%" stopColor="#FF7518" />
+                            <stop offset="100%" stopColor="#CC5500" />
                         </linearGradient>
                         <linearGradient id="kiteSheen" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />

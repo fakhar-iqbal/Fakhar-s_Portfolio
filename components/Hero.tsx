@@ -83,23 +83,49 @@ export const Hero: React.FC = () => {
             justifyContent: 'center',
             alignItems: 'center'
           }}>
+            {/* Profile Image with Blob Shape and Gradient */}
             <div style={{
-              width: '400px',
-              height: '400px',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '8px solid var(--color-primary)',
-              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)'
+              position: 'relative',
+              width: '100%',
+              maxWidth: '450px',
+              aspectRatio: '1/1',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}>
-              <img
-                src="/resume/pic.png"
-                alt="Muhammad Fakhar"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
-                }}
-              />
+              {/* Background Blob with Gradient */}
+              <div style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(135deg, #FFB74D 0%, #FF9800 100%)',
+                animation: 'blobAnimation 8s linear infinite',
+                filter: 'blur(10px)',
+                opacity: '0.8'
+              }} />
+
+              {/* Profile Image Container with Blob Shape */}
+              <div style={{
+                position: 'relative',
+                width: '90%',
+                height: '90%',
+                overflow: 'hidden',
+                animation: 'blobAnimation 8s linear infinite',
+                border: '4px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+                background: '#ffffff'
+              }}>
+                <img
+                  src="/resume/pic.png"
+                  alt="Muhammad Fakhar"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transform: 'scale(1.1)'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -123,6 +149,6 @@ export const Hero: React.FC = () => {
           }
         }
       `}</style>
-    </section>
+    </section >
   );
 };

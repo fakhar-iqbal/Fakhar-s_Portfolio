@@ -23,9 +23,7 @@ export const MagneticCursor: React.FC = () => {
 
         // Smooth factor (lower = more drag/lag)
         const speed = 0.05;
-        // 4cm is ~150px. Top-right diagonal offset (150 / sqrt(2) ≈ 106px)
-        const restingOffsetX = 106;
-        const restingOffsetY = 106;
+        const offsetDist = 106; // Standard diagonal distance (approx 3cm-4cm)
 
         const handleMouseMove = (e: MouseEvent) => {
             mouseX = e.clientX;
@@ -38,9 +36,28 @@ export const MagneticCursor: React.FC = () => {
         };
 
         const animate = () => {
-            // Target is 4cm away on the top right
-            const targetX = dotX + restingOffsetX;
-            const targetY = dotY - restingOffsetY;
+            // Dynamic Offsets based on window position
+            // Flip horizontal offset if near the right edge
+            const horizontalThreshold = window.innerWidth * 0.7;
+            const currentRestingOffsetX = dotX > horizontalThreshold ? -offsetDist : offsetDist;
+
+            // Flip vertical offset if near the top edge
+            const verticalThreshold = window.innerHeight * 0.3;
+            // The request says "top most ... get to left side" but usually we want it below if at top
+            // "when cursor is on top most... kite should get to left side" 
+            // Ok, let's follow the user's specific logic:
+            // "far right or top most ... kite should get to left side"
+            // "far left side ... kite should be on right side"
+
+            let targetRestingOffsetX = offsetDist;
+            if (dotX > window.innerWidth * 0.6 || dotY < window.innerHeight * 0.4) {
+                targetRestingOffsetX = -offsetDist;
+            } else if (dotX < window.innerWidth * 0.4) {
+                targetRestingOffsetX = offsetDist;
+            }
+
+            const targetX = dotX + targetRestingOffsetX;
+            const targetY = dotY - offsetDist;
 
             // Linear interpolation for kite movement towards target
             const prevKiteX = kiteX;

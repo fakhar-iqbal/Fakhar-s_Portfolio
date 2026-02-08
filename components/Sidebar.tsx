@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import picImage from '/resume/pic.png';
 
 interface SidebarProps {
   activeSection?: string;
@@ -56,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
           <div className="sidebar-profile">
             <div className="profile-image-wrapper">
               <img
-                src="./resume/pic.png"
+                src={picImage}
                 alt="Muhammad Fakhar"
                 className="profile-image"
               />

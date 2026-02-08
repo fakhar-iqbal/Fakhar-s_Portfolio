@@ -1,4 +1,5 @@
 import React from 'react';
+import picImage from '/resume/pic.png';
 
 export const About: React.FC = () => {
     return (
@@ -24,7 +25,7 @@ export const About: React.FC = () => {
                             aspectRatio: '1/1'
                         }}>
                             <img
-                                src="./resume/pic.png"
+                                src={picImage}
                                 alt="Muhammad Fakhar"
                                 style={{
                                     width: '100%',

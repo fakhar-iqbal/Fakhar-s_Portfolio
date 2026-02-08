@@ -1,4 +1,5 @@
 import React from 'react';
+import picImage from '/resume/pic.png';
 
 export const Hero: React.FC = () => {
   return (
@@ -116,7 +117,7 @@ export const Hero: React.FC = () => {
                 background: '#ffffff'
               }}>
                 <img
-                  src="./resume/pic.png"
+                  src={picImage}
                   alt="Muhammad Fakhar"
                   style={{
                     width: '100%',

@@ -24,7 +24,7 @@ export const About: React.FC = () => {
                             aspectRatio: '1/1'
                         }}>
                             <img
-                                src="/resume/pic.png"
+                                src="./resume/pic.png"
                                 alt="Muhammad Fakhar"
                                 style={{
                                     width: '100%',

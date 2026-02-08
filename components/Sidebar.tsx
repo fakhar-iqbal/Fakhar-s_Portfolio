@@ -56,7 +56,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
           <div className="sidebar-profile">
             <div className="profile-image-wrapper">
               <img
-                src="/resume/pic.png"
+                src="./resume/pic.png"
                 alt="Muhammad Fakhar"
                 className="profile-image"
               />

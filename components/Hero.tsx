@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
                 HIRE ME
               </a>
               <a
-                href="/resume/Fakhar_SE_AI_Engineering.pdf"
+                href="./resume/Fakhar_SE_AI_Engineering.pdf"
                 download
                 className="btn btn-primary"
                 style={{
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
                 background: '#ffffff'
               }}>
                 <img
-                  src="/resume/pic.png"
+                  src="./resume/pic.png"
                   alt="Muhammad Fakhar"
                   style={{
                     width: '100%',

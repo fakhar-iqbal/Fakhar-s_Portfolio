@@ -1,5 +1,5 @@
 import React from 'react';
-import picImage from '/resume/pic.png';
+import picImage from '../resume/pic.png';
 
 export const Hero: React.FC = () => {
   return (

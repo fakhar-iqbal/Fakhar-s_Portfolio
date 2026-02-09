@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import picImage from '/resume/pic.png';
+import picImage from '../resume/pic.png';
 
 interface SidebarProps {
   activeSection?: string;

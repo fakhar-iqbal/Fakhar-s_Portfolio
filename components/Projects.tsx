@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import picImage from '../media/goldmines.png';
+import picImage2 from '../media/aipoweredfoodapp.png';
+import picImage3 from '../media/saudialawbot.png';
+import picImage4 from '../media/jobagent.png';
+import picImage5 from '../media/securechattingapp.png';
+import picImage6 from '../media/ecommerce.jpg';
 
 interface Project {
   title: string;
@@ -14,7 +20,7 @@ const projects: Project[] = [
   {
     title: 'Gold Mines Machine Age Prediction',
     category: 'AI/ML',
-    image: '/media/goldmines.png',
+    image: picImage,
     shortDescription: 'Predictive analytics for mining equipment',
     fullDescription: 'Estimated age of gold mining machines by integrating multiple industrial datasets. Cleaning large volumes of raw sensor data involved extensive preprocessing and feature engineering.',
     technologies: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Data Preprocessing'],
@@ -28,7 +34,7 @@ const projects: Project[] = [
   {
     title: 'AI-Powered Food Ordering App',
     category: 'Full Stack',
-    image: '/media/aipoweredfoodapp.png',
+    image: picImage2,
     shortDescription: 'Flutter app with RAG chatbot',
     fullDescription: 'Flutter application with integrated realtime RAG chatbot. Features route-based ordering system and dynamic embedding update mechanism for live menu changes.',
     technologies: ['Flutter', 'RAG', 'Vector Embeddings', 'FastAPI', 'MongoDB'],
@@ -42,7 +48,7 @@ const projects: Project[] = [
   {
     title: 'Saudi Law RAG Chatbot',
     category: 'AI/ML',
-    image: '/media/saudialawbot.png',
+    image: picImage3,
     shortDescription: 'Arabic voice-enabled legal chatbot',
     fullDescription: 'Arabic voice-enabled chatbot answering questions about Saudi Arabian laws. Hybrid search system retrieves relevant legal documents with high accuracy.',
     technologies: ['NLP', 'Voice AI', 'PyTorch', 'RAG', 'Arabic Language Processing'],
@@ -56,7 +62,7 @@ const projects: Project[] = [
   {
     title: 'E-Commerce Platform',
     category: 'Full Stack',
-    image: '/media/ecommerce.jpg',
+    image: picImage6,
     shortDescription: 'React & Go microservices platform',
     fullDescription: 'Scalable platform with React frontend and Go backend. Microservices architecture, secure role-based access, and real-time inventory updates.',
     technologies: ['React', 'Go', 'Microservices', 'PostgreSQL', 'Docker'],
@@ -70,7 +76,7 @@ const projects: Project[] = [
   {
     title: 'Secure Chatting App',
     category: 'AI/ML',
-    image: '/media/securechattingapp.png',
+    image: picImage5,
     shortDescription: 'LSTM-based spam filtering',
     fullDescription: 'Context-aware spam & vulgar content filtering using LSTM-based deep learning models. Reduces false negatives significantly in spam classification.',
     technologies: ['LSTM', 'Deep Learning', 'TensorFlow', 'NLP', 'Python'],
@@ -84,7 +90,7 @@ const projects: Project[] = [
   {
     title: 'Autonomous Job Application Agent',
     category: 'AI/ML',
-    image: '/media/jobagent.png',
+    image: picImage4,
     shortDescription: 'n8n automation for job applications',
     fullDescription: 'Built a dual-pipeline automation agent in n8n that discovers job openings, extracts HR contact information, and sends personalized application emails with AI-generated cover letters. Integrated LinkedIn scraping and Jooble.pk API for job discovery, implemented email extraction logic achieving above 90% contact discovery rate, and utilized Gemini for role-specific cover letter generation.',
     technologies: ['n8n', 'LinkedIn API', 'Jooble API', 'Gemini AI', 'SMTP', 'Web Scraping'],

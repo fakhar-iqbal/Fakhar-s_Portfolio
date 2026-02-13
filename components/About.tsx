@@ -24,10 +24,10 @@ export const About: React.FC = () => {
           {/* Right Side - Content */}
           <div className="about-content">
             <h3 className="about-greeting">
-              I'm <span className="text-primary">Muhammad Fakhar</span>,
+              I'm <span className="text-primary">Fakhar-e-Iqbal Abdullah</span>,
             </h3>
             <p className="about-title">
-              Full Stack AI/ML Engineer | AI Solutions Architect | Software Engineer | MLOps & Cloud ML
+              Full Stack AI/ML Engineer | AI Solutions Architect | Cloud ML | MLOps | Shipping AI-Powered Apps | Jack of All Trades
             </p>
             <p className="about-text">
               I am an AI/ML Engineer with hands-on experience in developing predictive models,
@@ -96,7 +96,7 @@ export const About: React.FC = () => {
         }
 
         .about-title {
-          font-size: 1.25rem;
+          font-size: 1rem;
           color: var(--color-text-gray);
           margin-bottom: 1.5rem;
         }

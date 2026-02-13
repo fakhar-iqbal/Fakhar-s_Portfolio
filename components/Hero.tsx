@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
               HI THERE!
             </p>
             <h1 className="hero-name">
-              I'M <span className="text-primary">MUHAMMAD FAKHAR</span>
+              I'M <br></br><span className="text-primary">FAKHAR-E-IQBAL ABDULLAH</span>
             </h1>
           </div>
 
@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
           {/* Info - Title, Description, Actions */}
           <div className="hero-info">
             <p className="hero-title">
-              Full Stack AI/ML Engineer | AI Solutions Architect | Software Engineer | MLOps & Cloud ML
+              Full Stack AI/ML Engineer | AI Solutions Architect | Cloud ML | MLOps | Shipping AI-Powered Apps | Jack of All Trades
             </p>
             <p className="hero-description">
               I build AI that actually works.

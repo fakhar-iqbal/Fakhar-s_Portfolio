@@ -4,8 +4,9 @@ export const DarkModeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Check local storage for theme preference, default to dark
     const savedTheme = localStorage.getItem('theme');
+    const hasDarkMode = document.body.classList.contains('dark-mode');
+
     if (savedTheme === 'light') {
       setIsDark(false);
       document.body.classList.remove('dark-mode');

@@ -79,10 +79,23 @@
   }
 }
 </script>
+    <script>
+        // Early theme initialization to prevent flash
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark-mode');
+                document.body.classList.remove('dark-mode');
+            } else {
+                document.documentElement.classList.add('dark-mode');
+                // Body might not be ready yet if script is in head, so we also do it on DOMContentLoaded or rely on the class already being there
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="./index.css">
 </head>
 
-<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200 selection:text-slate-900">
+<body class="dark-mode font-sans antialiased selection:bg-slate-200 selection:text-slate-900">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
 </body>

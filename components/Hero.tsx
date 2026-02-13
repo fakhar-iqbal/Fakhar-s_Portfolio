@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
               HI THERE!
             </p>
             <h1 className="hero-name">
-              I'M <br></br><span className="text-primary">FAKHAR-E-IQBAL ABDULLAH</span>
+              I'M <br></br><span className="text-primary">MUHAMMAD FAKHAR</span>
             </h1>
           </div>
 

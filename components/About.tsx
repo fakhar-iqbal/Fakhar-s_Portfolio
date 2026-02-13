@@ -24,7 +24,7 @@ export const About: React.FC = () => {
           {/* Right Side - Content */}
           <div className="about-content">
             <h3 className="about-greeting">
-              I'm <span className="text-primary">Fakhar-e-Iqbal Abdullah</span>,
+              I'm <span className="text-primary">Muhammad Fakhar</span>,
             </h3>
             <p className="about-title">
               Full Stack AI/ML Engineer | AI Solutions Architect | Cloud ML | MLOps | Shipping AI-Powered Apps | Jack of All Trades

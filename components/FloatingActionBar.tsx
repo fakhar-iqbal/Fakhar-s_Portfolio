@@ -145,6 +145,7 @@ export const FloatingActionBar: React.FC = () => {
             height: 40px;
             font-size: 1rem;
           }
+        }
         @media (max-width: 480px) {
           .floating-action-bar-container {
             display: none;

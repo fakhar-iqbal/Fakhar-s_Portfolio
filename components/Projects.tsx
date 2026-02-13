@@ -268,8 +268,8 @@ export const Projects: React.FC = () => {
         }
 
         .btn-view-details:hover {
-          background-color: var(--color-secondary);
-          color: white;
+          background-color: white;
+          color: #000000;
         }
 
         /* Modal Styles */
@@ -442,6 +442,33 @@ export const Projects: React.FC = () => {
 
           .modal-content {
             margin: 1rem;
+            max-height: 85vh;
+          }
+
+          .modal-image {
+            padding: 1rem;
+          }
+
+          .modal-info {
+            padding: 1.5rem;
+          }
+
+          .modal-title {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          #portfolio {
+            padding: 60px 20px;
+          }
+
+          .project-content {
+            padding: 1.25rem;
+          }
+
+          .modal-overlay {
+            padding: 1rem;
           }
         }
       `}</style>

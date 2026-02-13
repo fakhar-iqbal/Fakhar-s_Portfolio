@@ -7,6 +7,7 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { id: 'home', label: 'HOME', icon: '🏠' },
@@ -46,12 +47,21 @@ export const Sidebar: React.FC<SidebarProps> = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <>
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="mobile-overlay"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Desktop Sidebar */}
-      <aside className="sidebar">
+      <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-content">
           {/* Profile Section */}
           <div className="sidebar-profile">
@@ -89,13 +99,26 @@ export const Sidebar: React.FC<SidebarProps> = () => {
       </aside>
 
       {/* Mobile Menu Toggle */}
-      <button className="mobile-menu-toggle">
+      <button
+        className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <style>{`
+        .mobile-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(4px);
+          z-index: 999;
+        }
         .sidebar {
           position: fixed;
           left: 0;
@@ -219,6 +242,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
 
         @media (max-width: 768px) {
           .sidebar {
+            width: 280px;
             transform: translateX(-100%);
           }
 

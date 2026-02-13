@@ -181,8 +181,27 @@ export const Contact: React.FC = () => {
 
             <style>{`
         @media (max-width: 768px) {
-          #contact > div > div > div:nth-child(3) {
+          #contact .container > div > div:nth-child(3) {
             grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
+
+          #contact .card {
+            padding: 1.5rem !important;
+          }
+
+          #contact h3 {
+            font-size: 1.25rem !important;
+          }
+
+          #contact p {
+            font-size: 0.875rem !important;
+            margin-bottom: 2rem !important;
+          }
+
+          #contact a {
+            font-size: 0.875rem !important;
+            word-break: break-all;
           }
         }
       `}</style>

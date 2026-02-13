@@ -19,11 +19,14 @@
   --color-bg-dark: #E8E8E8;
   --color-bg-black: #000000;
   --color-border: #E0E0E0;
+  --cursor-color: #006400;
+  /* Dark Green for Light Mode */
 
   /* Layout */
   --sidebar-width: 205px;
   --action-bar-width: 60px;
   --content-padding: 80px;
+  --section-horizontal-padding: 60px;
 
   /* Typography */
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -37,6 +40,8 @@ body.dark-mode {
   --color-text-gray: #B0B0B0;
   --color-border: #333333;
   --color-secondary: #FFFFFF;
+  --cursor-color: #FF9800;
+  /* Orange for Dark Mode */
 }
 
 body {
@@ -159,7 +164,8 @@ a {
 @media (max-width: 768px) {
   :root {
     --sidebar-width: 0;
-    --content-padding: 40px;
+    --content-padding: 60px;
+    --section-horizontal-padding: 24px;
   }
 
   .main-content {
@@ -169,7 +175,7 @@ a {
 
 /* Section Styles */
 section {
-  padding: var(--content-padding) 60px;
+  padding: var(--content-padding) var(--section-horizontal-padding);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -451,15 +457,15 @@ body.dark-mode .card {
 /* Responsive */
 @media (max-width: 768px) {
   section {
-    padding: 60px 30px;
+    padding: var(--content-padding) var(--section-horizontal-padding);
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 
   .portfolio-grid {
